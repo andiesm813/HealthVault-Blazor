@@ -1,0 +1,99 @@
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<div class="column-layout master-view-container">
+    <div class="row-layout main-navigation">
+        <IgbNavbar class="navbar" master-view-scope>
+            <div @onclick="@(e => Navigate(""))" class="row-layout group">
+                <img src="assets/logo2.svg" class="image" />
+                <p class="typography__subtitle-2 text">
+                    HEALTHCARE ASSISTANT
+                </p>
+            </div>
+            <div slot="end">
+                <div class="row-layout group_1">
+                    <div class="row-layout group">
+                        <IgbAvatar Src="assets/Avatar13.png" Shape="AvatarShape.Circle" class="avatar" master-view-scope></IgbAvatar>
+                        <p class="typography__subtitle-2 text">
+                            Sandy Anderson
+                        </p>
+                    </div>
+                    <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button" master-view-scope>
+                        <span class="material-icons">
+                            menu
+                        </span>
+                        <IgbRipple></IgbRipple>
+                    </IgbIconButton>
+                </div>
+            </div>
+        </IgbNavbar>
+    </div>
+    <div class="row-layout bottom-container">
+        <div class="view-container">
+            @Body
+        </div>
+        <IgbNavDrawer Position="NavDrawerPosition.End" class="nav-drawer" master-view-scope>
+            <IgbNavDrawerItem @onclick="@(e => Navigate(""))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        home
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Home</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("medications"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        healing
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Medications</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("health-indicators"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        favorite
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Health Indicators</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("appointments"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        calendar_today
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Appointments</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("profile"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        account_circle
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Medical Profile</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("emergency"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        error
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Emergency</div>
+            </IgbNavDrawerItem>
+        </IgbNavDrawer>
+    </div>
+</div>
+
+@code {
+    private void Navigate(string path)
+    {
+        NavigationManager.NavigateTo(path);
+    }
+}
