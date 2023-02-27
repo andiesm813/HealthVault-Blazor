@@ -32,7 +32,7 @@
         <div class="view-container">
             @Body
         </div>
-        <IgbNavDrawer Position="NavDrawerPosition.End" class="nav-drawer" master-view-scope>
+        <IgbNavDrawer Open="true" Position="NavDrawerPosition.End" class="nav-drawer" master-view-scope>
             <IgbNavDrawerItem @onclick="@(e => Navigate(""))">
                 <span slot="icon">
                     <span class="material-icons icon">
@@ -68,6 +68,15 @@
                     <IgbRipple></IgbRipple>
                 </span>
                 <div slot="content">Appointments</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("appointmentsv-2"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        calendar_today
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Appointments v2</div>
             </IgbNavDrawerItem>
             <IgbNavDrawerItem @onclick="@(e => Navigate("profile"))">
                 <span slot="icon">
