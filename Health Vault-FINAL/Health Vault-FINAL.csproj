@@ -18,6 +18,7 @@
     <None Update="Pages/Medications.razor.css" CssScope="medications-scope" />
     <None Update="Pages/HealthIndicators.razor.css" CssScope="health-indicators-scope" />
     <None Update="Pages/Appointments.razor.css" CssScope="appointments-scope" />
+    <None Update="Pages/Appointmentsv2.razor.css" CssScope="appointmentsv-2-scope" />
     <None Update="Pages/Profile.razor.css" CssScope="profile-scope" />
     <None Update="Pages/Emergency.razor.css" CssScope="emergency-scope" />
   </ItemGroup>
